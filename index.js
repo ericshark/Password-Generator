@@ -20,3 +20,12 @@ function create(){
     btn1El.textContent =  generate()
     btn2El.textContent = generate()
 }
+
+btn1El.addEventListener('click', function () {
+
+    const textToCopy = this.textContent;
+
+    navigator.clipboard.writeText(textToCopy).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
+});
